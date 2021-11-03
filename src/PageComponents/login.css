@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    justify-content: center;
+    background-color: rgb(3, 8, 63);
+    border-radius: 16px;
+    box-shadow: 2px 2px  2px 2px rgb(15, 15, 15);
+    /* padding-top: 30px !important; */
+     /* padding-top:40% !important;  */
+    /* padding-top: 10%;  */
+    /* margin-bottom: 40% !important; */
+    
+  }
+  /* .text-center{
+    background: aqua;
+    width: 100%;
+    
+  }*/
+  .login{
+    background: rgb(28, 3, 70) ;
+    box-shadow: 2px 2px  2px 2px rgb(15, 15, 15);
+  } 
+  .login1{
+    background: rgb(47, 250, 206)
+  }
+  .login0{
+    width: 100;
+    height:100vh ;
+    background: rgb(9, 210, 224) ;
+  }
+  .logoZ{
+    font-family: 'Great Vibes', cursive;
+    background:  linear-gradient(to right, #f71c7b, #ff4e49, #f17f17, #d0a800, #a0c92e, #68d470, #26daa9, #00dbd6, #00caf5, #00b3ff, #0094ff, #8e64fa);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+          
+  }
+  .FinZ{
+    background:  linear-gradient(to right, #f71c7b, #ff4e49, #f17f17, #d0a800, #a0c92e, #68d470, #26daa9, #00dbd6, #00caf5, #00b3ff, #0094ff, #8e64fa) !important;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+  }
+  @media(max-width:768px){
+    .SearchZ{
+      display: none !important;
+    }
+  }
+  
+  
