@@ -39,12 +39,12 @@ function SubProfile() {
             let logout = await axios.get(`${env.api}/user/logout`)
             window.localStorage.removeItem('firstlogin')
             setUser({ ...user, err: '', success: logout.data.msg })
-            window.location.href = "/";
+            window.location.href = "/login";
             // history.push('/')
         } catch (err) {
             err.response.data.msg &&
                 setUser({ ...user, err: err.response.data.msg, success: '' })
-            window.location.href = "/";
+            window.location.href = "/login";
         }
 
     }
