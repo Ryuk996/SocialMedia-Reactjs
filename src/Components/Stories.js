@@ -1,22 +1,32 @@
 import {useEffect,useState} from 'react'
 import faker from 'faker'
-import Story from './Story';
+import axios from "axios";
+import Story from './Story'; 
 import "../Styles/global.css";
+import env from "../PageComponents/settings"
 
 function Stories() {
+    const token = window.localStorage.getItem("firstlogin");
     const [suggestions, setSuggestions] = useState([]);
-    useEffect(() => {
-        const suggestions =[...Array(20)].map((_,i)=>({                                       //contextualCard=> creates a buncg of fake datas
-            ...faker.helpers.contextualCard(),
-            id:i,
-        }))
-       setSuggestions(suggestions)
+    useEffect(async() => {
+        try{
+            let product = await axios.get(`${env.api}/user/getalluser`, {
+                            headers: {Authorization: token}
+                        })
+                        setSuggestions([...product.data])
+      
+          }
+          catch{
+            console.log("error");
+       
+          }
+     
     }, [])
-    return (
+    return ( 
         <div className="storiesNav">
             {
                 suggestions.map(profile=>(
-                    <Story key={profile.id} img={profile.avatar} username={profile.username}/>
+                    <Story key={profile.id} img={profile.profilePic} username={profile.firstName}/>              //{profile.avatar}
                 ))
             }
         </div>

@@ -29,14 +29,19 @@ function Post({id,username,userImg,img,caption}) {
     const [user, setUser] = useState(initialState)
     const { err, success } = user
     const [profName, setProfName] = useState([])
+    const [logged,setLog] = useState(false)
 
     useEffect(async () => {
+       
+        if(token!==null){
+            setLog(true)
+        }
         try {
             let profile = await axios.get(`${env.api}/user/getuser`, {
                 headers: {Authorization: token}
             })
             setProfName([...profile.data])
-            console.log(profile.data)
+            
             onSnapshot(query(collection(db,'posts',id,'comments'),orderBy('timestamp','desc')), 
             (snapshot) => {
                setComments(snapshot.docs);
@@ -81,9 +86,6 @@ function Post({id,username,userImg,img,caption}) {
             }
         }  
      
-       
-    console.log(haslikedPost)
-
     const sendComment = async(e) =>{
         e.preventDefault();
         const commentTosend = comment;
@@ -107,6 +109,7 @@ function Post({id,username,userImg,img,caption}) {
             {/* IMG */}
             <img src={img} className="object-cover w-full " alt="" />
             {/* button */}
+            { logged ? 
             <div className="flex justify-between px-4 pt-4">
                 <div className="flex space-x-4">
                     {
@@ -120,7 +123,7 @@ function Post({id,username,userImg,img,caption}) {
                     <PaperAirplaneIcon className="PostIconBtn"/>
                 </div>
                 <BookmarkIcon className="PostIconBtn" />
-            </div>
+            </div> : <></>}
             
             {/* caption */}
                 <div>
@@ -149,11 +152,11 @@ function Post({id,username,userImg,img,caption}) {
                 </div>
             )}
             {/* input */}
-            <form className="flex items-center p-4">
+            { logged ? <form className="flex items-center p-4">
                 <EmojiHappyIcon className="h-7" />
                 <input value={comment} onChange={e=>setComment(e.target.value)} className="border-none flex-1 focus:ring-0" type="text" placeholder="Add a comment.."></input>
                 <button type="submit" disabled={!comment.trim()} onClick={sendComment} className="font-semibold text-blue-400">Post</button>
-            </form>
+            </form> : <></> }
         </div>
     )
 }

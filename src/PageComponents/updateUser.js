@@ -162,7 +162,7 @@ export default function UpdateUser(){
 						<form  class="px-8 pt-6 pb-8 mb-4 bg-green-500 rounded">
                         <div class="mb-4">
                             <div>
-                            <Link to="/drive"><HomeIcon className="homeBTNX sm:visible "></HomeIcon></Link>
+                            <Link to="/"><HomeIcon className="homeBTNX sm:visible "></HomeIcon></Link>
                             </div>
                         {/* <Link to="/"><HomeIcon className="navBtn sm:visible "></HomeIcon></Link> */}
                         {

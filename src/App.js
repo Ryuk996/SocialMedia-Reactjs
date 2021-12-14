@@ -33,9 +33,9 @@ export default function App() {
          <Route path="/register" component={Register} exact={true}/>
         <Route path="/user/activate/:activation_token" component={ActivationEmail} exact={true}/>
         <Route path="/user/reset/:id" component={Resetpassword} exact={true}/>
-        <Route path="/" component={Login} exact={true}/>
+        <Route path="/login" component={Login} exact={true}/>
         <Route path="/forgot_pwd" component={Forgotpassword} exact={true}/>
-        <Route path="/drive" component={Sociagram} exact={true}/>
+        <Route path="/" component={Sociagram} exact={true}/>
         <Route path="/profile" component={UpdateUser} exact={true}/>
         </RecoilRoot>
       </Switch>

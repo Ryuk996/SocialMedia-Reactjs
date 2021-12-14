@@ -40,7 +40,7 @@ function Header() {
             let profile = await axios.get(`${env.api}/user/getuser`,
                 { headers: { Authorization: token } })
             setProfName([...profile.data])
-            console.log(profile.data)
+            
             setSession(false)
 
         } catch (error) {
@@ -52,7 +52,7 @@ function Header() {
 
     let toLogin = async () => {
         try {
-            window.location.href = "/";
+            window.location.href = "/login";
         } catch (error) {
             console.log(error)
         }
@@ -65,12 +65,12 @@ function Header() {
             let logout = await axios.get(`${env.api}/user/logout`)
             window.localStorage.removeItem('firstlogin')
             setUser({ ...user, err: '', success: logout.data.msg })
-            window.location.href = "/";
+            window.location.href = "/login";
             // history.push('/')
         } catch (err) {
             err.response.data.msg &&
                 setUser({ ...user, err: err.response.data.msg, success: '' })
-            window.location.href = "/";
+            window.location.href = "/login";
         }
 
     }
@@ -81,17 +81,11 @@ function Header() {
             {/* {LEFT} */}
             <div className='relative hidden lg:inline-grid  w-24 cursor-pointer'>
             <h4  className="text-3xl font-black text-black pt-4 pl-2 logoZ">Sociagram</h4>
-                {/* <img src="https://bit.ly/3nJWRVU" 
-                    layout='fill' 
-                    objectFit="contain"
-                    />  */}
+                
             </div>
             <div className='relative   w-10 lg:hidden flex-shrink-0 cursor-pointer'>
             <CubeTransparentIcon className=" pt-2  "></CubeTransparentIcon>
-                {/* <img src="https://bit.ly/3BsS6VH" 
-                    layout='fill' 
-                    objectFit="contain"
-                    />  */}
+               
             </div>
                  <div className="max-w-xs SearchZ">
                  <div className="relative mt-1 p-3 rounded-md ">

@@ -31,7 +31,7 @@ function Login() {
             window.localStorage.setItem("firstlogin",loginData.data.aToken)
 
             // alert(loginData.data.message)
-            history.push("/drive")
+            history.push("/")
         } catch (err) {
             // console.log(error)
             err.response.data.msg &&

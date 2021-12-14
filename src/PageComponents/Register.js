@@ -135,7 +135,7 @@ function Register() {
 							<div class="text-center">
 								<Link
 									class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-									to="/"
+									to="/login"
 								>
 									Already have a Account!
 								</Link>

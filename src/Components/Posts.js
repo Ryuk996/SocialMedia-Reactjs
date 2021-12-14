@@ -21,7 +21,7 @@ function Posts() {
             console.log(error)
         } 
     }, [db])
-    console.log(posts)
+    
 
     return (
         <div>

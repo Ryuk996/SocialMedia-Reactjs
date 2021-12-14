@@ -23,7 +23,7 @@ function SubProfile() {
             let profile = await axios.get(`${env.api}/user/getuser`,
                 { headers: { Authorization: token } })
             setProfName([...profile.data])
-            console.log(profile.data)
+            
 
         } catch (error) {
             // alert("*kindly replace directory with your file diectory to fetch data");

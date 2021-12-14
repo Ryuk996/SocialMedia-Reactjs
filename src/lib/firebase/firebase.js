@@ -7,6 +7,16 @@ import { getStorage } from "@firebase/storage";
 // import firebase from "firebase/app";
 
 // Your web app's Firebase configuration
+//2//
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB9fwA0V1ROY6jm3H8pTDlfGq3m67gjiXs",
+//   authDomain: "sociagram-5b07c.firebaseapp.com",
+//   projectId: "sociagram-5b07c",
+//   storageBucket: "sociagram-5b07c.appspot.com",
+//   messagingSenderId: "689830322821",
+//   appId: "1:689830322821:web:c16ed6c67423b3f52b7fec"
+// };
+//1//
 const firebaseConfig = {
   apiKey: "AIzaSyAa18L5sN2d--mJlohy0U-CkXW4k1Ow3Ko",
   authDomain: "socialmedia-b19c3.firebaseapp.com",

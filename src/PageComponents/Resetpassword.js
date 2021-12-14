@@ -32,7 +32,7 @@ function Resetpassword() {
             let resetData = await axios.post(`${env.api}/user/resetpwd`,{password},
             {headers: {Authorization: id}})
             setUser({...user, err: '', success: resetData.data.msg})
-            history.push("/")
+            history.push("/login")
         } catch (err) {
             err.response.data.msg &&
             setUser({...user, err: err.response.data.msg, success: ''})
