@@ -31,6 +31,12 @@
     height:100vh ;
     background: rgb(9, 210, 224) ;
   }
+  .credential{
+    border: 2px solid tomato;
+    padding: 2px;
+    font-size: 1rem;
+    color: rgb(2, 1, 73);
+  }
   .logoZ{
     font-family: 'Great Vibes', cursive;
     background:  linear-gradient(to right, #f71c7b, #ff4e49, #f17f17, #d0a800, #a0c92e, #68d470, #26daa9, #00dbd6, #00caf5, #00b3ff, #0094ff, #8e64fa);
