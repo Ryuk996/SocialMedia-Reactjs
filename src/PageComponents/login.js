@@ -117,6 +117,11 @@ function Login() {
 						</form>
                         {err&& showErrMsg(err)}
                         {success && showSuccessMsg(success)}
+					<div className="credential">                                                   
+                        			<h6>Demo credential</h6>
+                        			<h6>userId : tanjiro@thail.com</h6>
+                        			<h6>password : 12345678</h6>
+                    			</div>
 					</div>
 				</div>
 			</div>
